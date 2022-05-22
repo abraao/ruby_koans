@@ -87,7 +87,5 @@ class AboutConstants < Neo::Koan
   # scope, or the constant from the inheritance hierarchy?  Why is it
   # different than the previous answer?
   #
-  # The constant in the inheritance hierarchy.
-  #
   # https://stackoverflow.com/questions/13661193/ruby-scopes-constants-precedence-lexical-scope-or-inheritance-tree
 end
