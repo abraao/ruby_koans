@@ -14,12 +14,27 @@
 #   about_triangle_project_2.rb
 #
 def triangle(a, b, c)
+  guard_sides_greater_than_0(a, b, c)
+  guard_sides_not_too_large(a, b, c)
+
   if a == b and b == c
     return :equilateral
   elsif a == b or b == c or a == c
     return :isosceles
   else
     return :scalene
+  end
+end
+
+def guard_sides_greater_than_0(a, b, c)
+  if [a, b, c].any? {|s| s <= 0}
+    raise TriangleError, "Side must be greater than 0"
+  end
+end
+
+def guard_sides_not_too_large(a, b, c)
+  if (a + b <= c) or (a + c <= b) or (b + c <= a)
+    raise TriangleError, "Two of the sides are larger than the third one"
   end
 end
 
